@@ -1,0 +1,8 @@
+version: '3'
+services:
+  csv-processor:
+    build: 
+      context: .
+    ports:
+      - 8501:8501
+    restart: always
