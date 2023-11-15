@@ -5,8 +5,8 @@ import csv
 from transforms import change_date_format
 
 st.set_page_config(page_title="Raiffeisen Account CSV processor", page_icon=":chart:")
-st.title("Raiffeisen Account CSV processor")
-st.subheader("Upload your CSV file")
+st.title("Raiffeisen Account CSV processor 📊")
+st.subheader("📁 Upload your CSV file")
 
 transforms = {
     'Könyvelés dátuma': lambda x: change_date_format(x),
@@ -16,7 +16,7 @@ transforms = {
 drop_columns = ['Típus']
 
 rows_to_skip = 0
-uploaded_file = st.file_uploader("Choose a CSV file")
+uploaded_file = st.file_uploader("Choose a CSV file or drag it here.")
 if uploaded_file:
     content = uploaded_file.getvalue().decode("latin-1").splitlines()
     reader = csv.reader(content, delimiter=';', quotechar='"')
